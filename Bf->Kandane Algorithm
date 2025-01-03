@@ -7,7 +7,7 @@ public class Main
 
 		  for(int i = 0;i<arr.length;i++){
 		      
-          int sum = arr[i]+c;
+          	      int sum = arr[i]+c;
 		      if (sum<0){
 		          c = 0;
 		      }
@@ -15,7 +15,7 @@ public class Main
 		          c = sum;
 		      }
 		      
-          ans = Math.max(ans,sum);
+                   ans = Math.max(ans,sum);
 		  }
 		  System.out.print(ans);
 	}
