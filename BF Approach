@@ -16,3 +16,5 @@ public class Main
 		System.out.print(max_sum);
 	}
 }
+TC : O(n^3)
+SC : ON(1)
