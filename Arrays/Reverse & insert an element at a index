@@ -1,0 +1,51 @@
+import java.util.*;
+public class Main
+{
+    public static int[] insert(int arr[],int ind,int ele){
+        int newarr[] = new int[arr.length+1];
+        for(int i = 0;i<arr.length+1;i++){
+            
+            if (i==ind){
+                newarr[i] = ele;
+            }
+            else if (i>ind){
+                newarr[i] = arr[i-1];
+            }
+            else{
+                newarr[i] = arr[i];
+            }
+        }
+        return newarr;
+    }
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,4};
+		int l = 0;
+		int r = arr.length-1;
+		int index = 2;
+		int ele = 10;
+		while(l<r){
+		    int t = arr[l];
+		    arr[l] = arr[r];
+		    arr[r] = t;
+		    l++;
+		    r--;
+		}
+		System.out.print(Arrays.toString(arr));        //Printing reverse of an array
+		int[] res = insert(arr,index,ele);
+		System.out.print(Arrays.toString(res));        //Printing array after inserting an element
+	}
+}
+//Alternative Method
+// int arr[] = {1,2,3,4};    //3
+// 		int n = arr.length;
+// 		int t = n/2;
+// 		if (n%2!=0){
+// 		    t = t+1;
+// 		}
+// 		for(int i=0;i<t;i++){
+// 		    int s = arr[i];
+// 		    arr[i] = arr[n-i-1];
+// 		    arr[n-i-1] = s;
+		    
+// 		}
+// 		System.out.print(Arrays.toString(arr));
