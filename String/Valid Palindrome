@@ -1,0 +1,31 @@
+/*A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. 
+Alphanumeric characters include letters and numbers.*/
+class Solution {
+    public boolean isPalindrome(String s) {
+        String s1 = s.replaceAll("[^0-9a-zA-Z]","").toLowerCase();
+        System.out.print(s1);
+        int l = s1.length();
+        int a = l/2;
+        if (l==0){
+            return true;
+        }
+        int p1 = 0;
+        int p2 = 0;
+        if (l%2!=0){        //Odd length
+            p1 = a;
+            p2 = a;
+        }
+        else{              //even length
+            p1 = a-1;
+            p2 = a;
+        }
+        while(p1>=0 & p2 <l){
+            if (s1.charAt(p1)!=s1.charAt(p2)){
+                return false;
+            }
+            p1--;
+            p2++;
+        }
+        return true;
+    }
+}
