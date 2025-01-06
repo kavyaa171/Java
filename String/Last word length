@@ -1,0 +1,31 @@
+Input:: s = "Hello World"
+Output:: 5
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        s = s.trim();
+
+        int lastSpaceIndex = s.lastIndexOf(' ');
+
+        return s.length() - lastSpaceIndex - 1;
+
+    }
+
+
+
+//Alternative
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String a = s.trim();      //removes leading spaces and ending spaces
+        String[] arr = a.split(" ");
+        int l = arr.length;
+        String res = arr[l-1];
+        int res1 = res.length();
+        return res1;
+    }
+}
