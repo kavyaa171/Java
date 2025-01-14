@@ -1,0 +1,33 @@
+//Optimized
+TC : O(n2)
+public class Main
+{
+    public static int check(String s,int p1,int p2){
+		while((p1>=0) && (p2<s.length())&& (s.charAt(p1)==s.charAt(p2))){
+		    p1-=1;
+		    p2+=1;
+		    
+		}
+		System.out.println(p2+s.substring(p1+1,p2) + (p2-p1-1));
+		return p2-p1-1;
+	}
+	public static void main(String[] args) {
+		String a = "ebsmadamsbe";
+		int n = a.length();
+		int len = 0;
+		if (n%2!=0){
+		    for(int i=0;i<n;i++){
+		    int l = check(a,i,i);
+		    len = Math.max(l,len);
+		}
+		}
+		else{
+		    for(int i=0;i<n;i++){
+		    int l = check(a,i,i+1);
+		    len = Math.max(l,len);
+		}
+		}
+		
+		System.out.println(len);
+	}
+}
