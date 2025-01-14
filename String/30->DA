@@ -1,0 +1,43 @@
+30  : AD
+52 : AZ
+
+
+import java.util.*;
+public class Main
+{
+    public static <K, V> K getKeyByValue(HashMap<K, V> a, V value) {
+        System.out.println(value);
+        for (K key : a.keySet()) {
+            if (a.get(key).equals(value)) {
+                return key;
+            }
+        }
+        return null;
+    }
+	public static void main(String[] args) {
+	    HashMap<Character, Integer> a = new HashMap<>();
+	    char t = '\0';
+	    for(char c = 'A';c<='Z';c++){
+	        a.put(c,c-'A'+1);
+	    }
+	    System.out.print(a);
+	    int find = 52;
+	    String res = "";
+	    int r = 0;
+	    while(find!=0){
+	        r = find%26;
+	        System.out.println(r);
+	        if (r==0){
+	            t = 'Z';
+	            res = res + t;
+	        }
+	        else{
+	            t = getKeyByValue(a, r);
+	            res = t+res;
+	        }
+	        
+	        find = find/26;
+	    }
+	    System.out.print(res);
+	}
+}
