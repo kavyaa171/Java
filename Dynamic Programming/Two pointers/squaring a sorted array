@@ -1,0 +1,28 @@
+Input: [-2, -1, 0, 2, 3]
+Output: [0, 1, 4, 4, 9]
+
+class Solution {
+  public static int[] makeSquares(int[] arr) {
+    int n = arr.length;
+    int[] squares = new int[n];
+    // TODO: Write your code here
+    int l = 0;
+    int r = n-1;
+    int index = n-1;
+    while(l<=r){
+      int kl = arr[l]*arr[l];
+      int kr = arr[r]*arr[r];
+      if (kl>=kr){
+        squares[index]=kl;
+        index--;
+        l++;
+      }
+      else{
+        squares[index]=kr;
+        index--;
+        r--;
+      }
+    }
+    return squares;
+  }
+}
