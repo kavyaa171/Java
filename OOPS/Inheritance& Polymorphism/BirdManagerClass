@@ -1,0 +1,23 @@
+import java.util.*;
+public class BirdManagerClass{
+    // public void flyAllEagle(List<Eagle> eagleList){
+    //     int s = eagleList.size();
+    //     for(int i=0;i<size;i++){
+    //         eagleList.get(i).fly();
+    //     }
+    // }
+    // public void flyAllEagle(List<Penguin> penguinList){
+    //     int s = penguinList.size();
+    //     for(int i=0;i<size;i++){
+    //         penguinList.get(i).fly();
+    //     }
+    // }
+    // Creating methods for all birds is such a waste of tym & memory.
+    //This could be implemented by polymorphism.
+    public void flyAllBirds(List<Bird> birds){
+        int s = birds.size();
+        for(int i=0;i<s;i++){
+            birds.get(i).fly();
+        }
+    }
+}
