@@ -1,0 +1,32 @@
+Optimizing it : 
+Time complexity : O(n+K) ~ O(n)
+Space complexity : O(maxelement)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>This code only works for elements range starting from more than 10.
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] array = {6,15,3,2,1,1};
+		System.out.println(Arrays.toString(array));                       //takes TC : O(nlogn)
+		//Let's do it by count freqeuncy Sort
+		int max = Arrays.stream(array).max().getAsInt();                  //Retrives max of element from input array
+		int min = Arrays.stream(array).min().getAsInt();                  //Retrives min of element from input array
+		int[] freq = new int[max+1];
+		Arrays.fill(freq,0);
+		System.out.println(Arrays.toString(freq));
+		int n = array.length;
+		for(int i = 0;i<n;i++){
+		    freq[array[i]]+=1;
+		}
+		//printing the array in sorted Order
+		System.out.println(Arrays.toString(freq));
+		for(int i=min;i<=max;i++){
+		    int j = freq[i];
+		    while(j>0){
+		        System.out.print(i+" ");
+		        j--;
+		    }		
+    }
+	}
+}
