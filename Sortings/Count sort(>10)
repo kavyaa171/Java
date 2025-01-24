@@ -27,6 +27,19 @@ public class Main
 		        System.out.print(i+" ");
 		        j--;
 		    }		
-    }
+    		
+		}
 	}
 }
+
+
+Issues : 
+1. Range is too big. 
+			EXPLANATION : Arrays can store only upto 10^6 elements. Hashing comes into picture.
+
+2. Maximum number is too big.		//Array won't work
+			EXPLANATION : Unordered Map(HASHMAP) helps here. 
+					Tree Map(ORdered), but insertion or accessing still takes O(nlogn).
+3. -10<=arr<=10		negative numbers
+
+
