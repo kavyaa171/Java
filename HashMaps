@@ -1,0 +1,32 @@
+//Finidng 1st non duplicate number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] arr = {1,2,2,4,5,1};
+	    HashMap<Integer,Integer> hm= new HashMap<>();
+	    int n = arr.length;
+	    for(int i=0;i<n;i++){
+	        if (hm.containsKey(arr[i])){
+	            hm.put(arr[i],hm.get(arr[i])+1);
+	        }
+	        else{
+	            hm.put(arr[i],1);
+	        }
+	    }
+	    System.out.println(hm.size());
+	    for(int i=0;i<n;i++){
+	        if (hm.get(arr[i])==1){
+	            System.out.println(arr[i]);
+	            break;
+	        }
+	    }
+	}
+}
+
+//HashMap            HashSet
+put(key,value)        insert(Key)
+get()                  No values; Only keys present in HashSet
+contains(Key)          contains()
+delete(Key)            delete()
+size()                  size()
